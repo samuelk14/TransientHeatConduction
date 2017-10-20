@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.transientheatconduction.LumpedSystemAnalysis">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a geometry"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_margin="16dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/lli">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/wall"
+                android:id="@+id/iwall"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/cilinder"/>
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/sphere"
+                android:layout_margin="2dp"/>
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/lli"
+            android:id="@+id/radiog">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="A Large Plane Wall"
+            android:textSize="16sp"
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:id="@+id/rdb1"
+            android:checked="false"
+            android:onClick="rbclick"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="A Long Cylinder"
+            android:textSize="16sp"
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:id="@+id/rdb2"
+            android:onClick="rbclick"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="A Sphere"
+            android:textSize="16sp"
+            android:paddingLeft="20dp"
+            android:layout_weight="1"
+            android:id="@+id/rdb3"
+            android:onClick="rbclick"/>
+
+
+        </RadioGroup>
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What do you want to calculate?"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Time (t)"
+            android:textSize="16sp"
+            android:checked="false"
+            android:id="@+id/rdba"
+            android:onClick="rbclick"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Temperature T(t)"
+            android:textSize="16sp"
+            android:onClick="rbclick"
+            android:id="@+id/rdbb"/>
+
+    </RadioGroup>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.transientheatconduction.MainActivityTHC">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/lsa"
+        android:src="@drawable/lumped"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lumped system analysis"
+        android:textAllCaps="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp" />
+
+    <ImageView
+        android:layout_width="285dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/thcg"
+        android:src="@drawable/geometries"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="transient heat conduction in large plane walls, long cylinders, and spheres with spatial effects"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"/>
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/thc"
+        android:src="@drawable/infiniti"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="transient heat conduction in semi-infinite solids"
+        android:textAllCaps="true"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"/>
+
+</LinearLayout>

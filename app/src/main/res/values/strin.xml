@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="material_array">
+        <item>-Selection-</item>
+        <item>Aluminum</item>
+        <item>Cadmium</item>
+        <item>Copper</item>
+        <item>Steel</item>
+        <item>Brick</item>
+        <item>Concrete</item>
+        <item>Glass</item>
+        <item>Other</item>
+    </string-array>
+</resources>
