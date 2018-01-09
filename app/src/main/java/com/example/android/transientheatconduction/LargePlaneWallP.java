@@ -92,42 +92,30 @@ public class LargePlaneWallP extends AppCompatActivity implements AdapterView.On
         Double CC = Double.parseDouble(extras4.getString("conCoe"));
 
         EditText Lenght = (EditText) findViewById(R.id.etat);
-        String L = Lenght.getText().toString();
+        Double L = Double.parseDouble(String.valueOf(Lenght.getText()));
 
         EditText think = (EditText) findViewById(R.id.editmt);
-        String thi = think.getText().toString();
+        Double thi = Double.parseDouble(String.valueOf(think.getText()));
 
         EditText width = (EditText) findViewById(R.id.edittt);
-        String wi = width.getText().toString();
+        Double wi = Double.parseDouble(String.valueOf(width.getText()));
 
         EditText conduct = (EditText) findViewById(R.id.editmt2);
-        String con = conduct.getText().toString();
+        Double con = Double.parseDouble(String.valueOf(conduct.getText()));
 
         EditText heatCap = (EditText) findViewById(R.id.edittt2);
-        String hC = heatCap.getText().toString();
+        Double hC = Double.parseDouble(String.valueOf(heatCap.getText()));
 
         EditText density = (EditText) findViewById(R.id.edittt3);
-        String den = density.getText().toString();
+        Double den = Double.parseDouble(String.valueOf(density.getText()));
 
         TextView miste = (TextView) findViewById(R.id.misterio);
-        double mi = Double.parseDouble(miste.getText().toString());
+        Double mi = Double.parseDouble(miste.getText().toString());
 
-        if (L.isEmpty()){
-            Lenght.setError("empty field");
-            Lenght.requestFocus();
-        }
 
-        else if (thi.isEmpty()){
-            think.setError("empty field");
-            think.requestFocus();
-        }
 
-        else if (wi.isEmpty()){
-            width.setError("empty field");
-            width.requestFocus();
-        }
 
-        else if (mi == 0){
+         if (mi == 0){
             Toast.makeText(getApplicationContext(), "Select a material", Toast.LENGTH_LONG).show();
         }
 
@@ -144,22 +132,7 @@ public class LargePlaneWallP extends AppCompatActivity implements AdapterView.On
             startActivity(calcular);
         }
 
-        else if (con.isEmpty()){
-            conduct.setError("empty field");
-            conduct.requestFocus();
-        }
-
-        else if (hC.isEmpty()){
-            heatCap.setError("empty field");
-            heatCap.requestFocus();
-        }
-
-        else if (den.isEmpty()){
-            density.setError("empty field");
-            density.requestFocus();
-        }
-
-        else if (mi == 8){
+        if (mi == 8){
 
             Intent calcular = new Intent(LargePlaneWallP.this, ResultLargePlaneWallP.class);
             calcular.putExtra("temAm", TA);

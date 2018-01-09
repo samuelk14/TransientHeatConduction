@@ -165,15 +165,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Convective flow:"
-                android:textColor="#000000"/>
+                android:textSize="16sp"/>
 
             <EditText
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/cajones"
                 android:textAlignment="center"
-                android:inputType="number"/>
+                android:inputType="text"/>
         </LinearLayout>
 
         <LinearLayout
@@ -187,16 +186,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Convective coefficient:"
-                android:textColor="#000000"/>
+                android:textSize="16sp"/>
 
             <EditText
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:background="@drawable/cajones"
-                android:hint="W/(m^2°K)"
+                android:hint="W/(m^2*K)"
                 android:textAlignment="center"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"
+                android:textSize="15sp"
+                android:id="@+id/edtcc"/>
         </LinearLayout>
 
         </LinearLayout>
@@ -206,7 +206,8 @@
             android:layout_height="wrap_content"
             android:text="next"
             android:layout_gravity="center"
-            android:layout_margin="16dp"/>
+            android:layout_margin="16dp"
+            android:onClick="siguiente"/>
 
 
     </LinearLayout>

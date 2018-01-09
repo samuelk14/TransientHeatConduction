@@ -15,42 +15,36 @@ import android.view.View;
 
 import android.widget.TextView;
 
-
-public class ResultLargePlaneWallP extends AppCompatActivity {
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    public SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    public ViewPager mViewPager;
+public class ResultLargePlaneWallP2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result_large_plane_wall_p);
+        setContentView(R.layout.activity_result_large_plane_wall_p2);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        /*
+      The {@link android.support.v4.view.PagerAdapter} that will provide
+      fragments for each of the sections. We use a
+      {@link FragmentPagerAdapter} derivative, which will keep every
+      loaded fragment in memory. If this becomes too memory intensive, it
+      may be best to switch to a
+      {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        /*
+      The {@link ViewPager} that will host the section contents.
+     */
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
 
 
     }
@@ -73,22 +67,11 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        //private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
 
 
 
-    }
+
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -104,16 +87,15 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            //return PlaceholderFragment.newInstance(position + 1);
             switch (position) {
                 case 0:
-                    ResultLargePlaneWall1 resultLargePlaneWall1;
-                    resultLargePlaneWall1 = new ResultLargePlaneWall1();
-                    return resultLargePlaneWall1;
+                    ResultLargePlaneWall2 resultLargePlaneWall2;
+                    resultLargePlaneWall2 = new ResultLargePlaneWall2();
+                    return resultLargePlaneWall2;
                 case 1:
-                    ResultLargePlaneWall1g resultLargePlaneWall1g;
-                    resultLargePlaneWall1g = new ResultLargePlaneWall1g();
-                    return resultLargePlaneWall1g;
+                    ResultLargePlaneWall2g resultLargePlaneWall2g;
+                    resultLargePlaneWall2g = new ResultLargePlaneWall2g();
+                    return resultLargePlaneWall2g;
 
             }
             return null;
@@ -180,6 +162,7 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
 
         double LongC = calculateLc(V, As);
         float LonC = (float) LongC;
+
         displaymis(LonC);
 
         double biot = calculateBiot(LongC, h, k);
@@ -191,26 +174,8 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
         displayb(bb);
 
         double t = calculatet(bb, Tt, Ta, Tm);
-        t = t / 3600;
-        if (t == 1){
-            int tt = (int) t;
-            displayt(tt);
-        }
-        else if (t != 1) {
-            double th = Math.floor(t);
-            //en tn guardo el decimal restante.
-            double tn = t - Math.floor(t);
-            //tm guarda el decimal restante por 60.
-            double tm = tn * 60;
-            //tmin guarda el menor numero de tm que serian los minutos.
-            double tmin = Math.floor(tm);
-            //ts guarda los decimales de tm
-            double ts = tm - Math.floor(tm);
-            double tse = ts * 60;
-            tse = Math.ceil(tse);
-            int tseg = (int) tse;
-            displaytime(th, tmin, tseg);
-        }
+        int tt = (int) t;
+        displayt(tt);
 
     }
 
@@ -222,17 +187,17 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
     }
 
     private void displaybiot (float onee){
-        TextView oneView = (TextView) findViewById(R.id.t2);
+        TextView oneView = (TextView) findViewById(R.id.t22);
         oneView.setText("El número de Biot es " + onee + " ");
     }
 
     private void displayb (float ujum){
-        TextView ujumView = (TextView) findViewById(R.id.t3);
+        TextView ujumView = (TextView) findViewById(R.id.t32);
         ujumView.setText("El valor del exponente b es " + ujum + " s^-1");
     }
 
     private void displaymis (float thr){
-        TextView threeView = (TextView) findViewById(R.id.t1);
+        TextView threeView = (TextView) findViewById(R.id.t12);
         threeView.setText("La longitud caracteristica es " + thr + " m");
     }
 
@@ -242,20 +207,17 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
     }
 
     private void displayt (int tt){
-        TextView timeView = (TextView) findViewById(R.id.t4);
-        timeView.setText("El tiempo es " + tt + " h");
+        TextView timeView = (TextView) findViewById(R.id.t42);
+        timeView.setText("La temperatura es " + tt + " °C");
     }
 
-    private void displaytime (double h, double m, double s) {
-        TextView timeView = (TextView) findViewById(R.id.t4);
-        timeView.setText("El tiempo es " + h + " h " + m + " min " + s + " seg");
-    }
+
 
     private double calculateBiot (double l, double hh, double kk){
         return (hh * l) / (kk);
     }
 
-    private double calculatet (float b, double tf, double ta, double tm) {return ((- 1 / b) * Math.log((tf - ta) / (tm - ta)));}
+    private double calculatet (float b, double tf, double ta, double tm) {return ((Math.exp(- (b) * tf)) * (tm - ta)) + ta;}
 
     private double calculateLc (double v, double as){
         return (v) / (as);
@@ -272,7 +234,5 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
     private double calculateb (double h, double as, double r, double cp, double v){
         return  ((h * as) / (r * cp * v));
     }
-
-
 
 }

@@ -15,7 +15,7 @@ import android.widget.Toast;
 import static com.example.android.transientheatconduction.R.id.spiner;
 
 
-public class LargePlaneWallP2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class LongCylinderP extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     RelativeLayout relim;
 
@@ -25,7 +25,7 @@ public class LargePlaneWallP2 extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_large_plane_wall_p2);
+        setContentView(R.layout.activity_long_cylinder_p);
 
         Spinner spinner;
         spinner = (Spinner) findViewById(spiner);
@@ -90,11 +90,10 @@ public class LargePlaneWallP2 extends AppCompatActivity implements AdapterView.O
         EditText Lenght = (EditText) findViewById(R.id.etat);
         Double L = Double.parseDouble(String.valueOf(Lenght.getText()));
 
-        EditText think = (EditText) findViewById(R.id.editmt);
-        Double thi = Double.parseDouble(String.valueOf(think.getText()));
+        EditText Diam = (EditText) findViewById(R.id.editmt);
+        Double Di = Double.parseDouble(String.valueOf(Diam.getText()));
 
-        EditText width = (EditText) findViewById(R.id.edittt);
-        Double wi = Double.parseDouble(String.valueOf(width.getText()));
+
 
         EditText conduct = (EditText) findViewById(R.id.editmt2);
         Double con = Double.parseDouble(String.valueOf(conduct.getText()));
@@ -108,33 +107,34 @@ public class LargePlaneWallP2 extends AppCompatActivity implements AdapterView.O
         TextView miste = (TextView) findViewById(R.id.misterio);
         Double mi = Double.parseDouble(miste.getText().toString());
 
-        if (mi == 0){
+
+
+
+         if (mi == 0){
             Toast.makeText(getApplicationContext(), "Select a material", Toast.LENGTH_LONG).show();
         }
 
         else if (mi >= 1 && mi <= 7){
-            Intent calcular = new Intent(LargePlaneWallP2.this, ResultLargePlaneWallP2.class);
+            Intent calcular = new Intent(LongCylinderP.this, ResultLongCylinder.class);
             calcular.putExtra("temAm", TA);
             calcular.putExtra("temMa", TM);
             calcular.putExtra("temTi", TT);
             calcular.putExtra("conCo", CC);
             calcular.putExtra("len", L);
-            calcular.putExtra("think", thi);
-            calcular.putExtra("width", wi);
+            calcular.putExtra("think", Di);
             calcular.putExtra("misteri", mi);
             startActivity(calcular);
         }
 
         if (mi == 8){
 
-            Intent calcular = new Intent(LargePlaneWallP2.this, ResultLargePlaneWallP2.class);
+            Intent calcular = new Intent(LongCylinderP.this, ResultLongCylinder.class);
             calcular.putExtra("temAm", TA);
             calcular.putExtra("temMa", TM);
             calcular.putExtra("temTi", TT);
             calcular.putExtra("conCo", CC);
             calcular.putExtra("len", L);
-            calcular.putExtra("think", thi);
-            calcular.putExtra("width", wi);
+            calcular.putExtra("think", Di);
             calcular.putExtra("conduct", con);
             calcular.putExtra("heatCapa", hC);
             calcular.putExtra("misteri", mi);

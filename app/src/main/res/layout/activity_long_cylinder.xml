@@ -174,7 +174,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cajones"
                 android:textAlignment="center"
-                android:inputType="number"/>
+                android:inputType="text"/>
         </LinearLayout>
 
         <LinearLayout
@@ -197,7 +197,8 @@
                 android:background="@drawable/cajones"
                 android:hint="W/(m^2°K)"
                 android:textAlignment="center"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:id="@+id/edtcc"/>
         </LinearLayout>
 
         </LinearLayout>
@@ -207,7 +208,8 @@
             android:layout_height="wrap_content"
             android:text="next"
             android:layout_gravity="center"
-            android:layout_margin="16dp"/>
+            android:layout_margin="16dp"
+            android:onClick="siguiente"/>
 
 
     </LinearLayout>

@@ -44,7 +44,28 @@
             android:name=".ResultLargePlaneWallP"
             android:label="Results"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".prueba"></activity>
+        <activity android:name=".prueba" />
+        <activity
+            android:name=".LargePlaneWallP2"
+            android:label="Large Plane Wall" />
+        <activity
+            android:name=".ResultLargePlaneWallP2"
+            android:label="@string/title_activity_result_large_plane_wall_p2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LongCylinderP"
+            android:label="Long Cylinder" />
+        <activity
+            android:name=".ResultLongCylinder"
+            android:label="Results"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LongCylinderP2"
+            android:label="Long Cylinder"/>
+        <activity
+            android:name=".ResultLongCylinder2"
+            android:label="Results"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
