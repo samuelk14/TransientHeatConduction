@@ -66,6 +66,16 @@
             android:name=".ResultLongCylinder2"
             android:label="Results"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SphereP"
+            android:label="Sphere"/>
+        <activity android:name=".SphereP2"
+            android:label="Sphere"/>
+        <activity android:name=".ResultSphere"
+            android:label="Results"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ResultSphere2"
+            android:label="Results"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

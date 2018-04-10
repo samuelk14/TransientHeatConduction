@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.transientheatconduction.SphereP">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input Parameter: Material Properties"
+            android:textColor="#000000"
+            android:layout_margin="4dp"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ipp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diameter"
+            android:layout_margin="4dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/ipp"
+            android:id="@+id/mt"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="m"
+            android:textSize="15sp"
+            android:background="@drawable/cajones"
+            android:layout_toRightOf="@id/mt"
+            android:layout_below="@+id/ipp"
+            android:layout_alignBottom="@id/mt"
+            android:layout_alignTop="@id/mt"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            android:layout_marginLeft="90dp"
+            android:id="@+id/editmt"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Material"
+            android:layout_margin="4dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/mt"
+            android:id="@+id/mat"/>
+
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/mat"
+            android:layout_below="@+id/editmt"
+            android:layout_alignBottom="@+id/mat"
+            android:layout_alignTop="@+id/mat"
+            android:layout_alignLeft="@+id/editmt"
+            android:id="@+id/spiner"
+            android:entries="@array/material_array"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="visible"
+        android:id="@+id/relipf">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input for Peaks Function"
+            android:textColor="#000000"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/l..."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Material Name:"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/l..."
+            android:id="@+id/mn"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:background="@drawable/cajones"
+            android:layout_toRightOf="@id/mn"
+            android:layout_below="@+id/l..."
+            android:layout_alignBottom="@id/mn"
+            android:layout_alignTop="@id/mn"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/etat2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conductivity"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/mn"
+            android:id="@+id/c"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="[W/(m*K)]"
+            android:textSize="15sp"
+            android:background="@drawable/cajones"
+            android:layout_toRightOf="@id/c"
+            android:layout_below="@+id/etat2"
+            android:layout_alignBottom="@id/c"
+            android:layout_alignTop="@id/c"
+            android:textAlignment="center"
+            android:layout_alignLeft="@id/etat2"
+            android:inputType="numberDecimal"
+            android:id="@+id/editmt2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specific heat"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/c"
+            android:id="@+id/hc"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="[J/(kg*K)]"
+            android:textSize="15sp"
+            android:background="@drawable/cajones"
+            android:layout_toRightOf="@id/hc"
+            android:layout_below="@+id/editmt2"
+            android:layout_alignBottom="@id/hc"
+            android:layout_alignTop="@id/hc"
+            android:textAlignment="center"
+            android:layout_alignLeft="@id/editmt2"
+            android:inputType="numberDecimal"
+            android:id="@+id/edittt2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Density"
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:layout_below="@+id/hc"
+            android:id="@+id/mat2"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="[kg/m^3]"
+            android:textSize="15sp"
+            android:background="@drawable/cajones"
+            android:layout_toRightOf="@id/mat2"
+            android:layout_below="@+id/edittt2"
+            android:layout_alignBottom="@id/mat2"
+            android:layout_alignTop="@id/mat2"
+            android:textAlignment="center"
+            android:layout_alignLeft="@id/editmt2"
+            android:inputType="numberDecimal"
+            android:id="@+id/edittt3"/>
+
+
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="calculate"
+        android:layout_gravity="center"
+        android:onClick="calculate"        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/misterio"
+        android:visibility="gone"
+        android:text="1"/>
+
+
+</LinearLayout>
