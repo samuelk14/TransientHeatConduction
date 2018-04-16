@@ -15,6 +15,15 @@ import android.view.View;
 
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+
+import java.util.ArrayList;
+
 
 public class ResultLargePlaneWallP extends AppCompatActivity {
 
@@ -32,6 +41,8 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     public ViewPager mViewPager;
+
+    private LineChart mChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -215,10 +226,82 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
     }
 
     public void graficar (View view){
-        Bundle extrasa = getIntent().getExtras();
-        String a = extrasa.getString("conduct");
+        Bundle extras3 = getIntent().getExtras();
+        Double three = extras3.getDouble("misteri");
 
-        dispalya(a);
+        Bundle extras2 = getIntent().getExtras();
+        Double Lc = extras2.getDouble("len");
+
+        Bundle extras11 = getIntent().getExtras();
+        Double thi = extras11.getDouble("think");
+
+        Bundle extras12 = getIntent().getExtras();
+        Double wi = extras12.getDouble("width");
+
+        Bundle extras4 = getIntent().getExtras();
+        Double h = extras4.getDouble("conCo");
+
+        Bundle extras5 = getIntent().getExtras();
+        Double k = extras5.getDouble("conduct");
+
+        Bundle extras6 = getIntent().getExtras();
+        Double p = extras6.getDouble("density");
+
+        Bundle extras7 = getIntent().getExtras();
+        Double Cp = extras7.getDouble("heatCapa");
+
+        Bundle extras8 = getIntent().getExtras();
+        Double Tt = extras8.getDouble("temTi");
+
+        Bundle extras9 = getIntent().getExtras();
+        Double Ta = extras9.getDouble("temAm");
+
+        Bundle extras10 = getIntent().getExtras();
+        Double Tm = extras10.getDouble("temMa");
+
+        double V = calculateV(Lc, thi, wi);
+
+        double As = calculateAs(Lc, thi, wi);
+
+        double LongC = calculateLc(V, As);
+        float LonC = (float) LongC;
+        displaymis(LonC);
+
+        double biot = calculateBiot(LongC, h, k);
+        float biott = (float) biot;
+        displaybiot(biott);
+
+        double b = calculateb(h, As, p, Cp, V);
+        float bb = (float) b;
+        displayb(bb);
+
+        float T = (float)Tm.doubleValue();
+        mChart = (LineChart) findViewById(R.id.graficaLPW);
+        mChart.setDragEnabled(true);
+        mChart.setScaleEnabled(false);
+
+        ArrayList<Entry> yValues = new ArrayList<>();
+
+        for (Double i = Tm; i >= Tt; i--){
+            double u = calculatet(bb, i, Ta, Tm);
+            float U = (float)u;
+
+            yValues.add(new Entry(U, T));
+            T = T - 1;
+        }
+
+
+        LineDataSet set1 = new LineDataSet(yValues, "Temperature T(t) vs Time (seg)");
+
+        set1.setFillAlpha(110);
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(set1);
+
+        LineData data = new LineData(dataSets);
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTH_SIDED);
+        mChart.setData(data);
     }
 
     private void displaybiot (float onee){
@@ -236,10 +319,7 @@ public class ResultLargePlaneWallP extends AppCompatActivity {
         threeView.setText("La longitud caracteristica es " + thr + " m");
     }
 
-    private void dispalya (String aa){
-        TextView aView = (TextView) findViewById(R.id.t1a);
-        aView.setText("" + aa + " jj");
-    }
+
 
     private void displayt (int tt){
         TextView timeView = (TextView) findViewById(R.id.t4);
